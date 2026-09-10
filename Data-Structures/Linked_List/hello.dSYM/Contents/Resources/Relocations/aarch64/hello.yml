@@ -1,0 +1,5 @@
+---
+triple:          'arm64-apple-darwin'
+binary-path:     '/Users/kimjunwoo/Documents/GitHub/Week4/Data-Structures/Linked_List/hello'
+relocations:     []
+...
