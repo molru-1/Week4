@@ -111,8 +111,19 @@ void moveOddItemsToBack(LinkedList *ll)
 		}
 		cur = cur->next;
 	}
-	
+    if (evenHead != NULL) {
+        ll->head = evenHead;
+        evenTail->next = oddHead;
+    } else {
+        ll->head = oddHead;
+    }
+    if (oddTail != NULL) {
+        oddTail->next = NULL;
+    } else if (evenTail != NULL) {
+        evenTail->next = NULL;
+    }
 }
+
 
 ///////////////////////////////////////////////////////////////////////////////////
 
