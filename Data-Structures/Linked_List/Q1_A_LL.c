@@ -90,19 +90,13 @@ int main()
 
 int insertSortedLL(LinkedList *ll, int item)
 {
-	ListNode *cur = ll->head;
-	while (cur != NULL) {
-		if (cur->item == item){
-			return -1; // 중복이므로 -1 반환
-		}
-		cur = cur->next; // 다음 상자로 이동
-	}
+	if(ll == NULL) return -1;
 	int index = 0;
-	cur =ll->head; //첫노드로 
-	while (cur != NULL && cur->item < item)
+	ListNode *cur = ll->head;
+	while (cur != NULL && cur -> item < item)
 	{
-		index++;
 		cur = cur->next;
+		index++;
 	}
 	insertNode(ll, index, item);
 	return index;
