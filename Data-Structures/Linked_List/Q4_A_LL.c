@@ -116,24 +116,23 @@ void moveEvenItemsToBack(LinkedList *ll)
 		}
 		cur = cur->next;
 	}
-	if (evenHead != NULL)
-	{
-		ll->head = oddHead;
-		oddTail->next = evenHead;
-	}
-	else
-	{
-		ll->head = oddHead;
-	}
-	if (oddTail != NULL)
-	{
-		evenTail->next = NULL;
-	}
-	else if (evenTail != NULL)
-	{
-		oddTail->next = NULL;
-	}
-	
+	if (oddHead != NULL)
+		{
+			ll->head = oddHead;
+			if (evenHead != NULL)
+			{
+				oddTail->next = evenHead;
+				evenTail->next = NULL;    // 홀수와 짝수가 모두 있을 때의 끝맺음
+			}
+			else
+			{
+				oddTail->next = NULL;     // 홀수만 있고 짝수가 없을 때의 끝맺음
+			}
+		}
+		else
+		{
+			ll->head = evenHead;         // 홀수가 없고 짝수만 있을 때의 시작점
+		}
 }
 
 ///////////////////////////////////////////////////////////////////////////////////
