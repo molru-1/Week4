@@ -7,7 +7,7 @@ Purpose: Implementing the required functions for Question 1 */
 //////////////////////////////////////////////////////////////////////////////////
 
 #include <stdio.h>
-#include <stdlib.h>
+#include <stdlib.h> //헤더 불러오기
 
 //////////////////////////////////////////////////////////////////////////////////
 
@@ -36,7 +36,7 @@ int removeNode(LinkedList *ll, int index);
 
 //////////////////////////// main() //////////////////////////////////////////////
 
-int main()
+int main() //
 {
 	LinkedList ll;
 	int c, i, j;
@@ -51,17 +51,17 @@ int main()
 	printf("3: Print sorted linked list:\n");
 	printf("0: Quit:");
 
-	while (c != 0)
+	while (c != 0) //c가 0이 아닐때, 즉 c가 0이될때까지 반복, c에 0이 입력되면 종료
 	{
 		printf("\nPlease input your choice(1/2/3/0): ");
-		scanf("%d", &c);
+		scanf("%d", &c); //뭘할지 받는다
 
 		switch (c)
 		{
-		case 1:
-			printf("Input an integer that you want to add to the linked list: ");
-			scanf("%d", &i);
-			j = insertSortedLL(&ll, i);
+		case 1: //c가 1일때
+			printf("Input an integer that you want to add to the linked list: "); //출력
+			scanf("%d", &i); //i를 입력받음
+			j = insertSortedLL(&ll, i); // j에 insertSortedLL(ll의주소, i)를 실생한 값을 넣음
 			printf("The resulting linked list is: ");
 			printList(&ll);
 			break;
@@ -90,13 +90,13 @@ int main()
 
 int insertSortedLL(LinkedList *ll, int item)
 {
-    if (ll == NULL) 
-        return -1;
-    ListNode *cur = ll->head;
+    if (ll == NULL) //예외처리, 
+        return -1; //-1 반한
+    ListNode *cur = ll->head; //ListNode 의 cur라는 포인터 변수선언, ll구초체 연결리스트 첫번째 노드 주소
 
-    int index = 0;
+    int index = 0; //인뎃수 영
 	
-    while (cur != NULL && cur->item < item)
+    while (cur != NULL && cur->item < item) 
     {
         cur = cur->next;
         index++;
