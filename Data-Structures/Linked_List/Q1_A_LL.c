@@ -90,12 +90,13 @@ int main() //
 
 int insertSortedLL(LinkedList *ll, int item)
 {
-    if (ll == NULL) //예외처리, 
-        return -1; //-1 반한
-    ListNode *cur = ll->head; //ListNode 의 cur라는 포인터 변수선언, ll구초체 연결리스트 첫번째 노드 주소
+    if (ll == NULL)
+        return -1; 
 
-    int index = 0; //인뎃수 영
-	
+    ListNode *cur = ll->head;
+
+    int index = 0;
+
     while (cur != NULL && cur->item < item) 
     {
         cur = cur->next;
@@ -150,7 +151,7 @@ void removeAllItems(LinkedList *ll)
 ListNode *findNode(LinkedList *ll, int index){
 
 	ListNode *temp;
-
+  
 	if (ll == NULL || index < 0 || index >= ll->size)
 		return NULL;
 
@@ -185,7 +186,6 @@ int insertNode(LinkedList *ll, int index, int value){
 		ll->size++;
 		return 0;
 	}
-
 
 	// Find the nodes before and at the target position
 	// Create a new node and reconnect the links
